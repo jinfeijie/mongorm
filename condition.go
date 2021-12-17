@@ -58,10 +58,9 @@ func (con *Condition) WhereOrResult(condition *Condition, secondCondition ...*Co
 	return bson.M{"$or": ret}
 }
 
-// Result 输出查询条件，输出bsonM，容易造成数据丢失
-// Deprecated
-func (con *Condition) Result() bson.M {
-	return con.condition.Map()
+// Result alias Cond
+func (con *Condition) Result() bson.D {
+	return con.Cond()
 }
 
 // Cond 输出查询条件

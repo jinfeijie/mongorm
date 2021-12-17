@@ -10,6 +10,10 @@ func ToObjectID(id string) primitive.ObjectID {
 	return objectID
 }
 
+func ObjectID(id string) primitive.ObjectID {
+	return ToObjectID(id)
+}
+
 func ObjToString(id primitive.ObjectID) string {
 	return id.Hex()
 }
